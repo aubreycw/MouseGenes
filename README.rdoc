@@ -1,0 +1,22 @@
+== README
+
+Mouse breeders often have complex plans for producing mice with the desired genes. Because mice have been bred for so long (often in laboratories), mouse genes for producing certain colours and furs are actually pretty well understood.
+
+This app would enable breeders to map out their breeding plans - for every mouse combination, they can see the chance of various genes being carried, and could make plans (directed graphs with paths being either breeding with or litter) for future breeding with dependencies (eg, breed darkest male mouse from litter A with female mouse from litter B with rex gene).
+
+Given information about a mouses line (children, partners, parents, etc), and partial knowledge of there genes it would be able to fill in the genes that mouse carries.
+
+Users can also request breedings with the mice of other users (if that has been allowed). 
+
+Features
+-----------
+Users can:
+[ ] have mice with pictures and relevant information
+[ ] send a breed request to a mouse owned by another user
+[ ] select two mice (one sire, one dam) and see the possible genes of the babies
+[ ] see a simple visual/textual representation of what any combination of genes looks like
+[ ] view the family tree of a mouse
+[ ] have information about genes their mice carry be filled in automatically (based on visual and carried genes of parents and progeny)
+[ ] enter the genes they would like a mouse to have, and have the app return a combination of mouse breedings (optionally involving non owned mice) with the lowest expected number of breedings to get a mouse with those genes
+[ ] make a breeding plan (with branching - eg, breed darkest male mouse from litter A with female mouse from litter B with rex gene)
+

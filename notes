@@ -1,0 +1,51 @@
+Mouse
+Possible Genes (for each of A, B, C, etc)
+A list of [0,1,0,1, etc] - where 1 means possible, 0 means not possible (or [0, 0.4, 0.6]) for a list like [AA, Aa, aa, etc] where each is the probability of each gene
+Sex
+Id
+LitterId
+Name
+Dam
+Sire
+Number of times bred (female mice can only be bred x number of times)
+
+
+
+--------------------------------- Functions --------------------------------
+
+SetGenes
+  * Reduce those possibilities to only the ones which match with looks (can use recesiveness here as well)
+  * go up tree until no more parents, then move downwards reducing possibilities each time
+  * as traverse up tree, update based on child
+  * go down tree until no more children, then move upwards reducing possibilities each time
+  * as traverse down tree, update based on parent
+  * if anything was changed, repeat
+
+
+
+Stretch Goal for SetGenes
+  * Give probabilites for each gene combination.
+
+MakeMouse
+  Searches for shortest breeding path (expected breedings) to get mouse with specific genes. Most simple option: for all combinations of current mice, pick one most likely to produce wanted mice.
+
+  * Run SetGenes
+  * Stack of paths, each with history of breedings, and then list of mice in that "world" (plus "chance" and "value" of world)
+  * Pop world off stack
+    * If world is more than x breedings down from origin, remove it.
+    * If no mice in a world carry desired genes, remove it
+    * If desired mouse is in that world, add it to the success pile!
+    * Otherwise, for all combinations of mice parents add representative possible babies, plus modify world value based on how close that is to wanted mice, and how likely that world is (keep track of world/pairing it came from), then push that to the bottom of the stack.
+    * If multiple same gened males, only push worlds which are not duplications.
+  * When no more worlds are on the stack:
+    * If the success pile is empty return failure
+    * Group everything in the success pile into lists of lists etc
+      * Repeatedly, all worlds/lists with same parent go into one list
+      * There will be a final list with everything in it.
+    * Choose sublist with lowest expected pairings (recursive)
+      * If it is a world, it is an inverse of the chance.
+      * If it is a list, it is the sum of the expected pairings for that world/list * the chance of that world/list occuring (given the current world).
+  
+
+
+
