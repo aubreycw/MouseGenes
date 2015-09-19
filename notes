@@ -15,11 +15,16 @@ Number of times bred (female mice can only be bred x number of times)
 
 SetGenes
   * Reduce those possibilities to only the ones which match with looks (can use recesiveness here as well)
+  t
   * go up tree until no more parents, then move downwards reducing possibilities each time
   * as traverse up tree, update based on child
   * go down tree until no more children, then move upwards reducing possibilities each time
   * as traverse down tree, update based on parent
   * if anything was changed, repeat
+
+  * Possibilities must match looks, plus possible genes from parents
+  * if children have a gene, and other parent does not, mouse has that gene
+  * hidden gene must have lower or equal dominance to shown gene
 
 
 
