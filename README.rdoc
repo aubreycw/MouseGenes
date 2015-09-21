@@ -6,7 +6,7 @@ This app would enable breeders to map out their breeding plans - for every mouse
 
 Given information about a mouses line (children, partners, parents, etc), and partial knowledge of there genes it would be able to fill in the genes that mouse carries.
 
-Users can also request breedings with the mice of other users (if that has been allowed). 
+Users can also request breedings with the mice of other users (if appropriate permissions are given). 
 
 Features
 -----------
